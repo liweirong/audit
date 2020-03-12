@@ -1,0 +1,15 @@
+iris:
+  oauth2:
+    token:
+      store:
+        type: redis
+  swagger:
+    enabled: true
+    title: 认证中心
+    description: 认证中心接口文档
+    version: 1.0
+    base-package: com.iris.oauth.controller
+  security:
+    code:
+      # 忽略验证码的应用编号
+      ignoreClientCode: app

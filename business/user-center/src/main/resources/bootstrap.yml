@@ -1,0 +1,17 @@
+server:
+  port: 7000
+
+spring:
+  application:
+    name: user-center
+#  cloud:
+#    nacos:
+#      discovery:
+#        metadata:
+#          version: zlt
+
+# Eureka \u5BA2\u6237\u7AEF\u914D\u7F6E
+eureka:
+  client:
+    serverUrl:
+      defaultZone: http://localhost:8761/eureka #eureka

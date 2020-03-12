@@ -1,0 +1,8 @@
+org.springframework.context.ApplicationContextInitializer=\
+com.iris.log.config.TtlMDCAdapterInitializer
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.iris.log.config.LogAutoConfigure,\
+com.iris.log.service.impl.LoggerAuditServiceImpl,\
+com.iris.log.service.impl.DbAuditServiceImpl,\
+com.iris.log.aspect.AuditLogAspect

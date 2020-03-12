@@ -1,0 +1,42 @@
+server:
+  port: 8000
+  servlet:
+    session:
+      cookie:
+        name: OAUTH2SESSION
+
+# Eureka \u5BA2\u6237\u7AEF\u914D\u7F6E
+eureka:
+  client:
+    serverUrl:
+      defaultZone: http://localhost:8761/eureka #eureka
+
+
+encrypt:
+  key-store:
+    location: classpath:zlt.jks
+    secret: zlt!@#$
+    alias: zlt
+
+spring:
+  application:
+    name: oauth-center-server
+  main:
+    ##### 允许bean覆盖
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://192.168.1.106:3306/oauth-center?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 13755886712Lwrong
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.central.oauth.model
+  global-config:
+    db-config:
+      id-type: auto
+
+
+
