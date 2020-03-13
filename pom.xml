@@ -27,6 +27,7 @@
         <!--<module>iris-business</module>-->
         <!-- 前端 -->
         <module>back-web</module>
+        <module>monitor</module>
         <!-- 任务 -->
        <!-- <module>iris-job</module>-->
         <!-- 监控 -->
