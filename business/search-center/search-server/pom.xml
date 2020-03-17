@@ -5,7 +5,7 @@
         <artifactId>spring-cloud-all</artifactId>
         <groupId>com.iris</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
     <artifactId>search-server</artifactId>
     <description>搜索中心服务端</description>
