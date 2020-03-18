@@ -15,6 +15,12 @@
 
 
     <dependencies>
+        <!--引入链路监控-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <version>RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>com.iris</groupId>
             <artifactId>config</artifactId>

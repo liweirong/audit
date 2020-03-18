@@ -12,6 +12,12 @@
     <description>用户中心</description>
     <name>user-center</name>
     <dependencies>
+        <!--引入链路监控-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <version>RELEASE</version>
+        </dependency>
         <!-- 公共实体类模块 -->
         <dependency>
             <groupId>com.iris</groupId>

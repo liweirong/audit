@@ -10,6 +10,12 @@
     <artifactId>search-server</artifactId>
     <description>搜索中心服务端</description>
     <dependencies>
+        <!--引入链路监控-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <version>RELEASE</version>
+        </dependency>
         <!-- 公共实体类模块 -->
         <dependency>
             <groupId>com.iris</groupId>

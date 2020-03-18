@@ -23,6 +23,7 @@
        <!-- <module>iris-uaa</module>-->
         <!-- 网关 -->
         <module>gateway</module>
+        <module>config-server</module>
         <!-- 业务 -->
         <!--<module>iris-business</module>-->
         <!-- 前端 -->
