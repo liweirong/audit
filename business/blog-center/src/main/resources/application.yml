@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: blog-center
+  # import zipkin
+#  zipkin:
+#    base-url: http://localhost:9411
+#  sleuth:
+#    sampler:
+#      percentage: 1.0 #\u914D\u7F6E100%\u7684\u6982\u8BBA\u5C06\u94FE\u8DEF\u7684\u6570\u636E\u4E0A\u4F20\u7ED9zipkin server\uFF0C\u9ED8\u8BA40.1
+  datasource:
+    url: jdbc:mysql://${audit.datasource.ip}:3306/blog-center?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    username: ${audit.datasource.username}
+    password: ${audit.datasource.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.iris.blog.entity
+  global-config:
+    db-config:
+      id-type: auto
+
+server:
+  port: 7010
+
+# Eureka
+#eureka:
+#  client:
+#    serverUrl:
+#      defaultZone: http://localhost:8761/eureka
+
+#swagger:
+#  butler:
+#    auto-generate-from-zuul-routes: true
+#    generate-routes: user,file
+#    apiDocsPath: v2/api-docs
+
+

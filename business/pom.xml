@@ -21,5 +21,7 @@
         <module>code-generator</module>
         <!-- 搜索中心 -->
         <module>search-center</module>
+        <!-- 博客中心 -->
+        <module>blog-center</module>
     </modules>
 </project>
