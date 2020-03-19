@@ -25,7 +25,7 @@ public class BlogService {
     }
 
 
-    public Blog  findBlogDetail(Long id) {
+    public Blog findBlogDetail(Long id) {
         Blog blog = blogMapper.findOne(id);
         if (null == blog) {
             return new Blog();

@@ -48,7 +48,7 @@ public class BlogController {
     @PreAuthorize("hasAuthority('ROLE_USER')")
     @GetMapping("/detail/{id}")
     @SysLogger("getBlogDetail")
-    public List<Blog>  getBlogDetail(@PathVariable Long id){
+    public Blog getBlogDetail(@PathVariable Long id){
         return blogService.findBlogDetail(id);
     }
 }
