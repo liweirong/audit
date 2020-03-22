@@ -25,18 +25,18 @@
         <module>gateway</module>
         <module>config-server</module>
         <!-- 业务 -->
-        <!--<module>iris-business</module>-->
+        <module>business</module>
         <!-- 前端 -->
         <module>back-web</module>
         <module>monitor</module>
         <!-- 任务 -->
        <!-- <module>iris-job</module>-->
         <!-- 监控 -->
-        <!--<module>iris-monitor</module>-->
+        <module>zipkin-server</module>
         <!-- 事务 -->
         <!--<module>iris-transaction</module>-->
         <!-- 配置 -->
-        <!-- <module>iris-config</module>-->
+         <module>config</module>
         <!-- demo -->
         <!--<module>iris-demo</module>-->
     </modules>

@@ -1,54 +1,48 @@
 package com.iris.blog.controller;
-import com.iris.blog.aop.SysLogger;
+
 import com.iris.blog.entity.Blog;
-import com.iris.blog.service.BlogService;
-import com.iris.blog.util.UserUtils;
+import com.iris.blog.service.IBlogService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+
+//import com.central.log.annotation.AuditLog;
+
 /**
- * @author iris
- * @date 2020/3/19
+ * @Author iris
+ * 用户
  */
+@Slf4j
 @RestController
-@RequestMapping("/blog")
+@Api(tags = "行业要闻发布api")
 public class BlogController {
+
     @Autowired
-    BlogService blogService;
+    private IBlogService blogService;
 
-    @ApiOperation(value = "发布博客", notes = "发布博客")
-    @PreAuthorize("hasRole('USER')")
-    @PostMapping("")
-    @SysLogger("postBlog")
-    public Boolean postBlog(@RequestBody Blog blog){
-        //字段判读省略
-        Boolean bool= blogService.postBlog(blog);
-        return bool;
+
+    /**
+     * 用户查询
+     *
+     * @param params
+     * @return
+     */
+    @ApiOperation(value = "行业要闻查询列表")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page", value = "分页起始位置", required = true, dataType = "Integer"),
+            @ApiImplicitParam(name = "limit", value = "分页结束位置", required = true, dataType = "Integer")
+    })
+    @GetMapping("/blogs")
+    public List<Blog> findUsers(@RequestParam Map<String, Object> params) {
+        return blogService.findAllUsers();
     }
 
-    @ApiOperation(value = "根据用户id获取所有的blog", notes = "根据用户id获取所有的blog")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
-    @GetMapping("/{username}")
-    @SysLogger("getBlogs")
-    public List<Blog> getBlogs(@PathVariable String  username){
-        //字段判读省略
-        if(UserUtils.isMyself(username)) {
-            List<Blog> blogs = blogService.findBlogs(username);
-            return blogs;
-        }else {
-            return Collections.emptyList();
-        }
-    }
 
-    @ApiOperation(value = "获取博文的详细信息", notes = "获取博文的详细信息")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
-    @GetMapping("/detail/{id}")
-    @SysLogger("getBlogDetail")
-    public Blog getBlogDetail(@PathVariable Long id){
-        return blogService.findBlogDetail(id);
-    }
 }

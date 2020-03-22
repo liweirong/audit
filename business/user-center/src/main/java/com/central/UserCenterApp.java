@@ -9,7 +9,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @author 作者 owen E-mail: 624191343@qq.com
+ * @Author iris
  */
 @EnableDiscoveryClient
 @EnableSearchClient

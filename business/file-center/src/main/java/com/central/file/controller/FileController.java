@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 /**
  * 文件上传
  *
- * @author 作者 owen E-mail: 624191343@qq.com
+ * @Author iris
  */
 @RestController
 public class FileController {
