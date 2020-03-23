@@ -19,8 +19,11 @@ public class Blog implements Serializable {
 
     private String title;
 
-    private String suject;
+    private String subject;
 
+    private String Context;
+
+    private Integer state;
 
     public Blog() {
     }
@@ -49,11 +52,27 @@ public class Blog implements Serializable {
         this.title = title;
     }
 
-    public String getSuject() {
-        return suject;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setSuject(String suject) {
-        this.suject = suject;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
+
+    public void setContext(String context) {
+        Context = context;
+    }
+
+    public String getContext() {
+       return this.Context;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
+    public Integer getState() {
+        return this.state;
+    }
+
 }

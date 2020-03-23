@@ -134,6 +134,12 @@ zuul:
       strip-prefix: true
       sensitive-headers: '*'
       custom-sensitive-headers: true
+    blog:
+      path: /blog-center/**
+      service-id: blog-center
+      strip-prefix: true
+      sensitive-headers: '*'
+      custom-sensitive-headers: true
   ssl-hostname-validation-enabled: false
 
 hystrix:
